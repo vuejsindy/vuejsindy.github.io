@@ -7,9 +7,41 @@
           font-family: sans-serif;
       }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
   </head>
   <body>
-    <h1>Vue.JS Indy</h1>
-    <p>Coming soon</p>
+    <div id="app">
+      <h1>Vue.JS Indy</h1>
+      <ul>
+        <li v-for="link in links">
+          <a :href="link.url">{{ link.name }}</a>
+        </li>
+      </ul>
+      <hr />
+      <a href="http://js.org" target="_blank" title="JS.ORG | JavaScript Community">
+        <img src="http://logo.js.org/dark_tiny.png" alt="JS.ORG Logo" width="77"/>
+      </a>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          links: [
+            {
+              url: 'https://discord.gg/3q6D3UU',
+              name: 'Vue.JS Indy Discord Chat'
+            },
+            {
+              url: 'https://meetup.com/vuejsindy',
+              name: 'Vue.JS Indy Meetup.com'
+            },
+            {
+              url: 'https://github.com/vuejsindy',
+              name: 'Vue.JS Indy on GitHub'
+            }
+          ]
+        }
+      });
+    </script>
   </body>
 </html>
