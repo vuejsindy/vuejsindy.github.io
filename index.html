@@ -69,7 +69,7 @@
         }
       }
     </style>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
   </head>
   <body>
     <div id="app" class="container">
@@ -79,6 +79,18 @@
       <ul>
         <li v-for="link in links">
           <a :href="link.url">{{ link.name }}</a>
+        </li>
+      </ul>
+      <h3>Companies in Indy using Vue</h3>
+      <ul>
+        <li v-for="company in companies">
+          <a :href="company.url">{{ company.name }}</a>
+        </li>
+      </ul>
+      <h3>Sponsors</h3>
+      <ul>
+        <li v-for="sponsor in sponsors">
+          {{ sponsor.name }} - {{ sponsor.type }}
         </li>
       </ul>
       <hr />
@@ -107,6 +119,54 @@
             {
               url: 'https://vue-land.js.org',
               name: 'Official Vue.js Chatroom'
+            }
+          ],
+          companies: [
+            {
+              name: 'World Wide Technology',
+              url: 'https://www.wwt.com/careers'
+            },
+            {
+              name: 'Work Here',
+              url: 'https://workhere.com/contact'
+            },
+            {
+              name: 'Crossroads Education',
+              url: 'https://crossroadseducation.org/about'
+            },
+            {
+              name: 'Viral Launch',
+              url: 'https://viral-launch.com/careers.html'
+            },
+            {
+              name: 'Driver Reach',
+              url: 'https://www.driverreach.com/careers'
+            },
+            {
+              name: 'Big Nerd Ranch',
+              url: 'https://www.bignerdranch.com/about/careers'
+            }
+          ],
+          sponsors: [
+            {
+              name: 'World Wide Technology',
+              type: 'Food and Venue Host'
+            },
+            {
+              name: 'Force Communications',
+              type: 'Venue host'
+            },
+            {
+              name: 'Greeks Pizzaria',
+              type: 'Food'
+            },
+            {
+              name: 'Union 525',
+              type: 'Venue host'
+            },
+            {
+              name: 'Launch Indy',
+              type: 'Venue host'
             }
           ]
         }
