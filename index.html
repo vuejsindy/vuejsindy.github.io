@@ -90,7 +90,12 @@
       <h3>Sponsors</h3>
       <ul>
         <li v-for="sponsor in sponsors">
-          {{ sponsor.name }} - {{ sponsor.type }}
+          <a v-if="sponsor.url" :href="sponsor.url">
+            {{ sponsor.name }} - {{ sponsor.type }}
+          </a>
+          <span v-else>
+            {{ sponsor.name }} - {{ sponsor.type }}
+          </span>
         </li>
       </ul>
       <hr />
@@ -173,8 +178,9 @@
               type: 'Venue host'
             },
             {
-              name: 'Greeks Pizzaria',
-              type: 'Food'
+              name: 'Greek\'s Pizzeria in West Clay Carmel',
+              type: 'Food',
+              url: 'https://greekspizzeria.com/west-clay/menu/menu.pdf'
             },
             {
               name: 'Union 525',
